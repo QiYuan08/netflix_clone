@@ -1,0 +1,44 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: emerald --default;
+}
+
+@theme {
+  --font-sans:
+    "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* 
+  --color-primary: oklch(0.72 0.11 178);
+  --color-white-primary: oklch(1, 0, 0, 1); */
+}
+
+@utility clip-img {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 100%,
+    69% 96%,
+    52% 95%,
+    29% 96%,
+    0 100%
+  );
+}
+
+html,
+body {
+  @apply bg-white dark:bg-gray-950;
+
+  @media (prefers-color-scheme: dark) {
+    color-scheme: dark;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
