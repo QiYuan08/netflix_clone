@@ -11,7 +11,7 @@ interface ButtonPrimaryProps {
 const ButtonPrimary: React.FC<ButtonPrimaryProps> = ({
   text,
   onClick,
-  color = "btn-primary",
+  color = "",
   rounded = true,
   style = "btn-outline",
 }) => {

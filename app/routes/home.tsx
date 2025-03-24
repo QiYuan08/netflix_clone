@@ -1,5 +1,13 @@
 import type { ReactElement } from "react";
-import PricingCard, { type PricingCardProps } from "~/component/PricingCard";
+import PricingCard, {
+  type PricingCardProps,
+} from "~/component/home/PricingCard";
+import { PiTelevisionSimpleLight } from "react-icons/pi";
+import ReasonToJoinCard from "~/component/home/ReasonToJoinCard";
+import { IoCloudDownloadOutline } from "react-icons/io5";
+import { CiGlobe } from "react-icons/ci";
+import { FaArrowsDownToPeople } from "react-icons/fa6";
+import AccordianJoined from "~/component/common/AccordianJoined";
 
 type Image = {
   src: string;
@@ -8,16 +16,16 @@ type Image = {
 export default function Home() {
   const images: Image[] = [
     {
-      src: "https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.webp",
+      src: "https://c4.wallpaperflare.com/wallpaper/94/797/206/kimi-no-na-wa-makoto-shinkai-starry-night-comet-wallpaper-preview.jpg",
     },
     {
-      src: "https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.webp",
+      src: "https://c4.wallpaperflare.com/wallpaper/110/381/152/jurassic-park-jurassic-world-chris-pratt-wallpaper-preview.jpg",
     },
     {
-      src: "https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.webp",
+      src: "https://c4.wallpaperflare.com/wallpaper/662/716/947/inception-movies-movie-scenes-group-of-people-wallpaper-preview.jpg",
     },
     {
-      src: "https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.webp",
+      src: "https://c4.wallpaperflare.com/wallpaper/820/461/127/anime-katekyō-hitman-reborn-hitman-reborn-tsunayoshi-sawada-wallpaper-preview.jpg",
     },
   ];
 
@@ -64,18 +72,22 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center gap-y-4 px-6">
-      <div className="flex justify-center">
-        <div className="join">
-          <button className="btn join-item bg-accent">Poular Now</button>
-          <button className="btn join-item border-x-0 bg-accent">Plans</button>
-          <button className="btn join-item border-l-0 bg-accent">
-            Reasons to Join
-          </button>
+      <div className="fixed top-1/12 left-1/2 z-3 -translate-1/2">
+        <div className="flex justify-center">
+          <div className="join">
+            <button className="btn join-item bg-accent">Poular Now</button>
+            <button className="btn join-item border-x-0 bg-accent">
+              Plans
+            </button>
+            <button className="btn join-item border-l-0 bg-accent">
+              Reasons to Join
+            </button>
+          </div>
         </div>
       </div>
 
       {/* carousel */}
-      <div className="carousel w-full">
+      <div className="carousel w-full shadow-lg">
         {images.map((img, idx): ReactElement => {
           let total = images.length;
 
@@ -108,6 +120,85 @@ export default function Home() {
             />
           );
         })}
+      </div>
+
+      {/* reason to join */}
+      <div className="mt-2 flex w-full flex-col justify-start gap-y-1">
+        <h2 className="grow text-xl font-semibold">More Reasons to Join</h2>
+
+        <ReasonToJoinCard
+          title="Enjoy on your TV"
+          description="A card component has a figure, a body part, and inside body
+                there are title and actions parts"
+          icon={PiTelevisionSimpleLight}
+        />
+
+        <ReasonToJoinCard
+          title="Enjoy on your TV"
+          description="A card component has a figure, a body part, and inside body
+                there are title and actions parts"
+          icon={IoCloudDownloadOutline}
+        />
+
+        <ReasonToJoinCard
+          title="Download your shows to watch offline"
+          description="Save your favorites easily and always have something to watch."
+          icon={CiGlobe}
+        />
+
+        <ReasonToJoinCard
+          title="Watch everywhere"
+          description="Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV."
+          icon={PiTelevisionSimpleLight}
+        />
+
+        <ReasonToJoinCard
+          title="Create profiles for kids"
+          description="Send kids on adventures with their favorite characters in a space made just for them — free with your membership."
+          icon={FaArrowsDownToPeople}
+        />
+      </div>
+
+      {/* FAQ */}
+      <div className="mt-2 flex w-full flex-col justify-start gap-y-1">
+        <h2 className="grow text-xl font-semibold">
+          Frequently Asked Question
+        </h2>
+
+        <AccordianJoined
+          items={[
+            {
+              title: "What is Netflix?",
+              description:
+                "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries, and more on thousands of internet-connected devices.",
+            },
+            {
+              title: "How much does Netflix cost",
+              description:
+                "Watch Netflix on your smartphone, tablet, Smart TV, laptop, or streaming device, all for one fixed monthly fee. Plans range from RM 18.90 to RM 62.90 a month. No extra costs, no contracts.",
+            },
+            {
+              title: "Where can I watch?",
+              description:
+                "Watch anywhere, anytime. Sign in with your Netflix account to watch instantly on the web at netflix.com from your personal computer or on any internet-connected device that offers the Netflix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.",
+            },
+            {
+              title: "How do I cancel?",
+              description:
+                "Netflix is flexible. There are no pesky contracts and no commitments. You can easily cancel your account online in two clicks. There are no cancellation fees – start or stop your account anytime.",
+            },
+            {
+              title: "What can I watch on Netflix",
+              description:
+                "Everything!! And you can request more if there is a missing movie that you want to add",
+            },
+            {
+              title: "Is Netflix good for kids",
+              description:
+                "The Netflix Kids experience is included in your membership to give parents control while kids enjoy family-friendly TV shows and movies in their own space.",
+            },
+          ]}
+        />
       </div>
     </div>
   );

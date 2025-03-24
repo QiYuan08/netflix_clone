@@ -3,10 +3,14 @@ import React from "react";
 interface TextInputProps {
   placeholder: string;
   type: string;
-  size: "input-sm" | "input-md" | "input-xl" | "input-lg";
+  value: any;
+  onChange?: () => {};
+  size?: "input-sm" | "input-md" | "input-xl" | "input-lg";
 }
 
 const TextInput: React.FC<TextInputProps> = ({
+  value,
+  onChange,
   placeholder,
   type = "text",
   size = "input-md",
@@ -15,6 +19,8 @@ const TextInput: React.FC<TextInputProps> = ({
     <input
       type={type}
       placeholder={placeholder}
+      value={value}
+      onChange={onChange}
       className={`input ${size} placeholder:text-base`}
     />
   );
