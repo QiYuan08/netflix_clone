@@ -3,12 +3,14 @@ import React from "react";
 interface TextInputProps {
   placeholder: string;
   type: string;
-  value: any;
-  onChange?: () => {};
+  value?: any;
+  name?: string
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   size?: "input-sm" | "input-md" | "input-xl" | "input-lg";
 }
 
 const TextInput: React.FC<TextInputProps> = ({
+  name = "",
   value,
   onChange,
   placeholder,
@@ -18,6 +20,7 @@ const TextInput: React.FC<TextInputProps> = ({
   return (
     <input
       type={type}
+      name={name}
       placeholder={placeholder}
       value={value}
       onChange={onChange}

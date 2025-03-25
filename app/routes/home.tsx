@@ -108,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* price plan */}
-      <div className="grid gap-x-2 gap-y-6 md:grid-cols-2 xl:grid-cols-4">
+      <div id="plans" className="grid gap-x-2 gap-y-6 md:grid-cols-2 2xl:grid-cols-4">
         {pricingCards.map((card) => {
           return (
             <PricingCard
