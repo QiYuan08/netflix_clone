@@ -75,13 +75,15 @@ export default function Home() {
       <div className="fixed top-1/12 left-1/2 z-3 -translate-1/2">
         <div className="flex justify-center">
           <div className="join">
-            <button className="btn join-item bg-accent">Poular Now</button>
-            <button className="btn join-item border-x-0 bg-accent">
+            <a className="btn join-item bg-accent" href="#popular">
+              Poular Now
+            </a>
+            <a className="btn join-item border-x-0 bg-accent" href="#plans">
               Plans
-            </button>
-            <button className="btn join-item border-l-0 bg-accent">
+            </a>
+            <a className="btn join-item border-l-0 bg-accent" href="#reasons">
               Reasons to Join
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -108,7 +110,10 @@ export default function Home() {
       </div>
 
       {/* price plan */}
-      <div id="plans" className="grid gap-x-2 gap-y-6 md:grid-cols-2 2xl:grid-cols-4">
+      <div
+        id="plans"
+        className="grid gap-x-2 gap-y-6 md:grid-cols-2 2xl:grid-cols-4"
+      >
         {pricingCards.map((card) => {
           return (
             <PricingCard
@@ -123,7 +128,10 @@ export default function Home() {
       </div>
 
       {/* reason to join */}
-      <div className="mt-2 flex w-full flex-col justify-start gap-y-1">
+      <div
+        className="mt-2 flex w-full flex-col justify-start gap-y-1"
+        id="reasons"
+      >
         <h2 className="grow text-xl font-semibold">More Reasons to Join</h2>
 
         <ReasonToJoinCard

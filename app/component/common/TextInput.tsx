@@ -3,8 +3,8 @@ import React from "react";
 interface TextInputProps {
   placeholder: string;
   type: string;
-  value?: any;
-  name?: string
+  value?: string | number;
+  name?: string;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   size?: "input-sm" | "input-md" | "input-xl" | "input-lg";
 }

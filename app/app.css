@@ -25,12 +25,19 @@
 }
 
 html,
-body {
-  @apply bg-white dark:bg-gray-950;
+body,
+body > header {
+  height: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
 
-  @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
 }
 
 h1,
@@ -60,4 +67,11 @@ span {
     rgba(0, 0, 0, 0.01111) 91.67%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+.signup-bg {
+  aspect-ratio: 1 / 1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../app/assets/home_bg.jpg");
 }
