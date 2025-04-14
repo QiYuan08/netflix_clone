@@ -43,7 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <div className="h-screen w-full overflow-auto bg-base-100">
+    <div className="grow bg-base-100">
       <Outlet />;
     </div>
   );

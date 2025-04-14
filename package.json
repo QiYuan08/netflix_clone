@@ -17,6 +17,8 @@
   "dependencies": {
     "@react-router/node": "^7.3.0",
     "@react-router/serve": "^7.3.0",
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7",
     "i18next": "^24.2.3",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
